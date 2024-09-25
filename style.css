@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("Home\ Library.jpeg");
+    background-position: center;
+    /* background-size: cover; */
+}
+
+header {
+    background-color: #460807;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header input {
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 25px;
+    border: none;
+    font-size: 1em;
+}
+
+/* Update Search Button */
+header button#searchButton {
+    padding: 10px 20px; /* Button ka size thoda bada kar diya */
+    font-size: 1em;
+    border-radius: 20px; /* Border radius ko round kiya */
+    background-color: #FFFDD0 ;
+    color: #592208;
+    border: 2px solid #592208;
+    cursor: pointer;
+    margin-left: 10px; /* Thoda space diya input aur button ke beech */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.book-item {
+    background-color: #d4d5b4;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    opacity: 0; /* Start with invisible */
+    animation: slideFromHeading 0.7s ease-in-out forwards; /* Apply animation */
+}
+
+.book-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-item h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.book-item p {
+    margin: 10px 0;
+}
+
+.book-details {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.book-details img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.book-details h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.book-details p {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    header input {
+        width: 100%;
+    }
+}
+
+/* Animation */
+@keyframes slideFromHeading {
+    from {
+        transform: translateY(-50px) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
